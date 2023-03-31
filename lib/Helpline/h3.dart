@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListPage extends StatefulWidget {
-  ListPage({required Key key, required this.title}) : super(key: key);
+  ListPage({Key?key}) : super(key: key);
 
-  final String title;
 
   @override
   _ListPageState createState() => _ListPageState();
@@ -17,111 +16,316 @@ class _ListPageState extends State<ListPage> {
       appBar: AppBar(
         elevation: 0.1,
         backgroundColor: Colors.purple[200],
-        title: Text(widget.title),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.list),
-            onPressed: () {},
-          )
-        ],
+        title: Text("Therapists Available",
+            style: TextStyle(color: Colors.black87)),
       ),
       body: Container(
         child: ListView(
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             children: <Widget>[
-              Card(
-                elevation: 8.0,
-                margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                child: Container(
-                  decoration: BoxDecoration(color: Colors.purple[200]),
-                  child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      leading: Container(
-                        padding: EdgeInsets.only(right: 12.0),
-                        decoration: new BoxDecoration(
-                            border: new Border(
-                                right: new BorderSide(width: 1.0, color: Colors.white24))),
-                        child: Icon(Icons.autorenew, color: Colors.white),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.purple[200],
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset("images/jean.jpg"),
                       ),
-                      title: Text(
-                        "Introduction to Driving",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-
-                      subtitle: Row(
-                        children: <Widget>[
-                          Icon(Icons.linear_scale, color: Colors.yellowAccent),
-                          Text(" Intermediate", style: TextStyle(color: Colors.white))
-                        ],
-                      ),
-                      trailing:
-                      Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0)),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Dr. Jean Miller",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+//width: width,
+                              child: ElevatedButton(onPressed: () {  }, child: Text(
+                                'Book Now',
+                                style: TextStyle(color: Colors.purple[200],
+                                    fontSize: 12),
+                              ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
 
-              Card(
-                elevation: 8.0,
-                margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                child: Container(
-                  decoration: BoxDecoration(color: Colors.purple[200]),
-                  child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      leading: Container(
-                        padding: EdgeInsets.only(right: 12.0),
-                        decoration: new BoxDecoration(
-                            border: new Border(
-                                right: new BorderSide(width: 1.0, color: Colors.white24))),
-                        child: Icon(Icons.autorenew, color: Colors.white),
-                      ),
-                      title: Text(
-                        "Introduction to Driving",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-
-                      subtitle: Row(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                    child: Card(
+                      color: Colors.purple[200],
+                      child: Row(
                         children: <Widget>[
-                          Icon(Icons.linear_scale, color: Colors.yellowAccent),
-                          Text(" Intermediate", style: TextStyle(color: Colors.white))
+                          Container(
+                            width: 100,
+                            height: 100,
+                            child: Image.asset("images/mill.jpg"),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Text(
+                                  "Dr. Mattew Mills",
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+//width: width,
+                                  child: ElevatedButton(onPressed: () {  }, child: Text(
+                                    'Book Now',
+                                    style: TextStyle(color: Colors.purple[200],
+                                        fontSize: 12),
+                                  ),
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.white,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(20.0),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
-                      trailing:
-                      Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0)),
+                    ),
+                  ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.purple[200],
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset("images/lincoln.png"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Dr. Lincoln Park",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+//width: width,
+                              child: ElevatedButton(onPressed: () {  }, child: Text(
+                                'Book Now',
+                                style: TextStyle(color: Colors.purple[200],
+                                    fontSize: 12),
+                              ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
 
-              Card(
-                elevation: 8.0,
-                margin: new EdgeInsets.symmetric(horizontal: 10.0, vertical: 6.0),
-                child: Container(
-                  decoration: BoxDecoration(color: Colors.purple[200]),
-                  child: ListTile(
-                      contentPadding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                      leading: Container(
-                        padding: EdgeInsets.only(right: 12.0),
-                        decoration: new BoxDecoration(
-                            border: new Border(
-                                right: new BorderSide(width: 1.0, color: Colors.white24))),
-                        child: Icon(Icons.autorenew, color: Colors.white),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.purple[200],
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset("images/hailey.jpg"),
                       ),
-                      title: Text(
-                        "Introduction to Driving",
-                        style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-                      // subtitle: Text("Intermediate", style: TextStyle(color: Colors.white)),
-
-                      subtitle: Row(
-                        children: <Widget>[
-                          Icon(Icons.linear_scale, color: Colors.yellowAccent),
-                          Text(" Intermediate", style: TextStyle(color: Colors.white))
-                        ],
-                      ),
-                      trailing:
-                      Icon(Icons.keyboard_arrow_right, color: Colors.white, size: 30.0)),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Dr. Hailey George",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+//width: width,
+                              child: ElevatedButton(onPressed: () {  }, child: Text(
+                                'Book Now',
+                                style: TextStyle(color: Colors.purple[200],
+                                    fontSize: 12),
+                              ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              )
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.purple[200],
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset("images/john.jpg"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Dr. John Kim",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+//width: width,
+                              child: ElevatedButton(onPressed: () {  }, child: Text(
+                                'Book Now',
+                                style: TextStyle(color: Colors.purple[200],
+                                    fontSize: 12),
+                              ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Card(
+                  color: Colors.purple[200],
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: Image.asset("images/maya.jpg"),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              "Dr. Maya Sharma",
+                              style: TextStyle(
+                                fontSize: 17,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+//width: width,
+                              child: ElevatedButton(onPressed: () {  }, child: Text(
+                                'Book Now',
+                                style: TextStyle(color: Colors.purple[200],
+                                    fontSize: 12),
+                              ),
+                                style: ElevatedButton.styleFrom(
+                                  primary: Colors.white,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20.0),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
             ]
         ),
       ),
