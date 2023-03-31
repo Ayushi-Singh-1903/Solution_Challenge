@@ -4,10 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:solution_challenge/Community/communityData.dart';
 import 'package:solution_challenge/Helpline/h1.dart';
 import 'package:solution_challenge/Helpline/h2.dart';
+import 'package:solution_challenge/authentication/signIn.dart';
 import 'package:solution_challenge/ed.dart';
 import 'package:solution_challenge/myths.dart';
 import 'package:solution_challenge/safeab.dart';
 import 'package:solution_challenge/safesex.dart';
+import 'package:solution_challenge/scroll.dart';
 import 'package:solution_challenge/service/auth.dart';
 import 'package:solution_challenge/sexD.dart';
 import 'package:solution_challenge/wrapper.dart';
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Wrapper(),
+        home: anecdotes(),
       ),
     );
   }

@@ -66,7 +66,7 @@ class _anecdotesState extends State<anecdotes>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.deepPurple[600],
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.purple[100],
           title:  Image.asset('images/logo2.png',
@@ -95,7 +95,7 @@ class _anecdotesState extends State<anecdotes>{
                         width: 360,
                         padding: const EdgeInsets.all(8.0),
                         decoration: BoxDecoration(
-                          color: Colors.white,
+                          color: Colors.purple[200],
                           boxShadow: [
                             BoxShadow(
                               color: Colors.deepPurple.withOpacity(0.05),
@@ -112,7 +112,7 @@ class _anecdotesState extends State<anecdotes>{
 
                               padding: const EdgeInsets.all(8.0),
                               decoration: BoxDecoration(
-                                color: Colors.purple[100],
+                                color: Colors.purple[200],
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.black.withOpacity(0.05),
@@ -129,6 +129,7 @@ class _anecdotesState extends State<anecdotes>{
                                   child: Text(documentSnapshot['a1'],
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
+                                      color: Colors.white,
                                       fontSize: 20,
                                     ),
                                   ),

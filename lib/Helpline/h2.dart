@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher_android/url_launcher_android.dart';
 class h2 extends StatelessWidget {
   const h2 ({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    backgroundColor: Colors.purple[100],
+    backgroundColor: Colors.white,
     body:
     Column(
       children: [
@@ -19,7 +21,7 @@ class h2 extends StatelessWidget {
                     child: Column(
                       children: [
                         Expanded(   child: Container(
-                          color: Colors.deepPurple[600],
+                          color: Colors.purple[100],
 
                         ),
                         ),
@@ -79,141 +81,100 @@ SizedBox(height: 20,),
         Expanded(
           child: ListView(
             children: [
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                    height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
               SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
+                    IconButton(
+                      icon: Image.asset('images/calls2.png',
+                        height: 60,
+                        width: 60,
+                      ),
+                      iconSize: 50,
+                      onPressed: () async{
+                        final Uri url=Uri(
+                          scheme:'tel',
+                          path: "452 869 8569",
+                        );
+                        if(await canLaunchUrl(url)){
+                          await launchUrl(url);
+                        }else{
+                          print('Cant launch url');
+                        }
+                      },
                     ),
-
-
+                    SizedBox(width: 30,),
+                    Text('Safe abortion helpline',style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20
+                    ),)
 
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
+                    IconButton(
+                      icon: Image.asset('images/calls2.png',
+                        height: 60,
+                        width: 60,
+                      ),
+                      iconSize: 50,
+                      onPressed: () async{
+                        final Uri url=Uri(
+                          scheme:'tel',
+                          path: "452 869 8569",
+                        );
+                        if(await canLaunchUrl(url)){
+                          await launchUrl(url);
+                        }else{
+                          print('Cant launch url');
+                        }
+                      },
                     ),
-
-
+                    SizedBox(width: 30,),
+                    Text('Suicidal thoughts helpline',style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),)
 
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
                   children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
+                    IconButton(
+                      icon: Image.asset('images/phone-call.png',
+                        height: 60,
+                        width: 60,
+                      ),
+                      iconSize: 50,
+                      onPressed: () async{
+                        final Uri url=Uri(
+                          scheme:'tel',
+                          path: "452 869 8569",
+                        );
+                        if(await canLaunchUrl(url)){
+                          await launchUrl(url);
+                        }else{
+                          print('Cant launch url');
+                        }
+                      },
                     ),
-
-
+                    SizedBox(width: 30,),
+                    Text('REPORT CRIME',style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20
+                    ),)
 
                   ],
                 ),
               ),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
-              SizedBox(height: 15,),
-              Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Row(
-                  children:[
-                    Image.asset('images/c1.png',
-                      height: 60,
-                      width: 60,
-                    ),
-
-
-
-                  ],
-                ),
-              ),
-              SizedBox(height: 15,),
 
             ],
           ),
