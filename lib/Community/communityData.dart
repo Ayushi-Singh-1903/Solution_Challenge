@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/src/material/colors.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:like_button/like_button.dart';
 class anecdotes extends StatefulWidget {
   const anecdotes({Key? key}) : super(key: key);
 
@@ -11,6 +12,7 @@ class anecdotes extends StatefulWidget {
 }
 
 class _anecdotesState extends State<anecdotes>{
+
 
 
   String userId = FirebaseAuth.instance.currentUser!.uid;
@@ -91,6 +93,7 @@ class _anecdotesState extends State<anecdotes>{
             return ListView.builder(
                 itemCount: streamSnapshot.data!.docs.length,
                 itemBuilder: (context, index){
+
                   final DocumentSnapshot documentSnapshot =
                       streamSnapshot.data!.docs[index];
                   return Column(
@@ -99,24 +102,20 @@ class _anecdotesState extends State<anecdotes>{
                       Container(
 
                         width: 360,
-                        padding: const EdgeInsets.all(8.0),
-                        decoration: BoxDecoration(
-                          color: Colors.purple[200],
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.deepPurple.withOpacity(0.05),
-                              blurRadius: 10,
-                              offset: const Offset(5,5),
-                            ),
-                          ],
-                          border: Border.all(color: Colors.purple.shade100,width: 2),
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Stack(
+                        child: Column(
                           children: [
+                            Align(
+                              child: CircleAvatar(
+                                radius: 30,
+                                backgroundColor: Colors.deepPurple,
+                                backgroundImage: AssetImage(documentSnapshot['a2']),
+                              ),
+                              alignment: Alignment.topLeft,
+                            ),
+                            SizedBox(height: 8,),
                             Container(
 
-                              padding: const EdgeInsets.all(8.0),
+                              margin: EdgeInsets.only(left: 22,right: 9,bottom: 9),
                               decoration: BoxDecoration(
                                 color: Colors.purple[200],
                                 boxShadow: [
@@ -126,37 +125,39 @@ class _anecdotesState extends State<anecdotes>{
                                     offset: const Offset(5,5),
                                   ),
                                 ],
-                                borderRadius: BorderRadius.circular(30.0),
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(top: 30),
-                                child: Align(
-                                  alignment: Alignment.center,
-                                  child: Text(documentSnapshot['a1'],
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
+                              child: Column(
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.all(8),
+                                    child: Text(documentSnapshot['a1'],
+                                      textAlign: TextAlign.justify,
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 14,
+
+                                      ),
                                     ),
                                   ),
-                                ),
+                                  SizedBox(height: 6,),
+                                  LikeButton(
+                                    padding: EdgeInsets.only(left: 7,bottom: 7),
+                                    size: 34,
+                                    likeCount: documentSnapshot['nol']as int,
+                                    countPostion: CountPostion.bottom,
+
+                                  ),
+                                ],
                               ),
                             ),
-                            Positioned(
-                              right:8,
-                                top: 8,
-                                child: CircleAvatar(
-                                  radius: 15,
-                                  backgroundColor: Colors.deepPurple,
-                                  backgroundImage: AssetImage('images/p.png'),
-                                ),
 
-                            ),
 
                           ],
                         ),
                       ),
 
+                      Divider(color: Colors.black26,),
                     ],
                   );
 

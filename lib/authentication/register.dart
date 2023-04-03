@@ -129,10 +129,12 @@ class _RegisterState extends State<Register> {
                         //odk
                         final user=User2(
                           name: name,
-                          gender: gender    ,
+                          gender: gender,
                           age: age,
+
                         );
-                          createUser(user);
+                        createUser(user);
+
                         if(_formKey.currentState!.validate()){
                           dynamic result = await _auth.registerWithEmailAndPassword(email, password);
                           if(result==null){
@@ -174,14 +176,17 @@ class User2{
   late final String name;
   late final String gender;
   late final String age;
+
   User2({
     required this.name,
     required this.gender,
     required this.age,
+
 });
   Map<String, dynamic> toJson() =>{
     'name':name,
     'gender':gender,
     'age':age,
+
   };
 }

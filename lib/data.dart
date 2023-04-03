@@ -6,20 +6,20 @@ import 'ed.dart';
 import 'package:solution_challenge/Community/communityData.dart';
 var data = [
   {
-    "title": "SEX EDUCATION",
+    "title": "Sex Education",
     "color": 0xFFCE93D8,
     "image": "images/sexed.png",
     "onTap": Ed(),
   },
-  {"title": "ANECDOTES", "color": 0xFFCE93D8, "image": "images/community.png","onTap":anecdotes()},
+  {"title": "Community Platform", "color": 0xFFCE93D8, "image": "images/community.png","onTap":anecdotes()},
   {
-    "title": "PREGNANT?",
+    "title": "Am I Pregnant?",
     "color": 0xFFCE93D8,
-    "image": "images/calls1.png",
+    "image": "images/pt.png",
     "onTap": Search()
   },
   {
-    "title": "HELP",
+    "title": "Help",
     "color": 0xFFCE93D8,
     "image": "images/calls1.png",
     "onTap": h1()

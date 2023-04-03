@@ -123,8 +123,8 @@ class _HomePageState extends State<Page1> {
                               item["title"] as String,
                               style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 25,
+                              fontWeight: FontWeight.bold)
                             )
                           ],
                         ),
