@@ -142,6 +142,8 @@ class _anecdotesState extends State<anecdotes>{
                                   ),
                                   SizedBox(height: 6,),
                                   LikeButton(
+                                    bubblesColor: BubblesColor(dotPrimaryColor: Colors.deepPurple, dotSecondaryColor: Colors.purple),
+                                    circleColor: CircleColor(start: Colors.deepPurpleAccent, end: Colors.deepPurple),
                                     padding: EdgeInsets.only(left: 7,bottom: 7),
                                     size: 34,
                                     likeCount: documentSnapshot['nol']as int,

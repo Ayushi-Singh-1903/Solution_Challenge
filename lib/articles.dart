@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'descriptivePagesData.dart';
+import 'loading.dart';
 class articles extends StatefulWidget {
   const articles({Key? key}) : super(key: key);
 
@@ -10,6 +11,7 @@ class articles extends StatefulWidget {
 }
 
 class _articlesState extends State<articles> {
+  bool loading = false;
   final CollectionReference _articles =
   FirebaseFirestore.instance.collection('Articles');
 
@@ -19,7 +21,7 @@ class _articlesState extends State<articles> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading? Loading():Scaffold(
 
 
       backgroundColor: Colors.white,
@@ -104,6 +106,7 @@ class _articlesState extends State<articles> {
                               child:
                               TextButton(
                                 onPressed: () {
+                                  setState(() => loading = true);
                                   var url = documentSnapshot['url'];
                                   launchURL(url);
 
@@ -134,7 +137,7 @@ class _articlesState extends State<articles> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Container(
-                                          child: Image.network(documentSnapshot['image']),
+                                          child: Center(child: Image.network(documentSnapshot['image'])),
                                         ),
                                       SizedBox(
                                         height: 19,
