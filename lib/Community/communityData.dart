@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/src/material/colors.dart';
@@ -11,6 +12,8 @@ class anecdotes extends StatefulWidget {
 
 class _anecdotesState extends State<anecdotes>{
 
+
+  String userId = FirebaseAuth.instance.currentUser!.uid;
   final TextEditingController _anecdoteController = TextEditingController();
   final CollectionReference _Anecdotes =
       FirebaseFirestore.instance.collection('Anecdotes');
@@ -49,7 +52,10 @@ class _anecdotesState extends State<anecdotes>{
                     final String a = _anecdoteController.text;
 
                     if (a != null) {
-                      await _Anecdotes.add({"a1": a, });
+                      await _Anecdotes.add({
+                        "a1": a,
+                        "id":userId,
+                      });
 
                       _anecdoteController.text = '';
 

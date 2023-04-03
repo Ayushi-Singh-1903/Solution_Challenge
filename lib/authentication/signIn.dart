@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:solution_challenge/service/auth.dart';
 
+import '../loading.dart';
+
 class SignIn extends StatefulWidget {
   final  toggleView;
   const SignIn({Key?key,this.toggleView}):super(key:key);
@@ -13,12 +15,13 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   final  AuthService _auth = AuthService();
   final _formKey = GlobalKey<FormState>();
+  bool loading = false;
   String email='';
   String password ='';
   String error='';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return loading ? Loading() : Scaffold(
       resizeToAvoidBottomInset : false,
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -79,9 +82,13 @@ class _SignInState extends State<SignIn> {
                       ),
                       onPressed: () async{
                         if(_formKey.currentState!.validate()){
+                          setState(()=> loading=true);
                           dynamic result = await _auth.signInWithEmailAndPassword(email, password);
                           if(result==null){
-                            setState(()=>error='Could not LogIn with those Credentials');
+                            setState((){
+                            error='Could not LogIn with those Credentials';
+                            loading =false;
+                          });
                           }
                         }
                       },

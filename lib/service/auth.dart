@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:solution_challenge/models/user.dart';
-
+import 'package:solution_challenge/user.dart';
+import 'package:solution_challenge/authentication/register.dart';
 class AuthService{
 
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -42,6 +43,7 @@ class AuthService{
     try{
       UserCredential result = await _auth.createUserWithEmailAndPassword(email: email, password: password);
       User? user = result.user;
+      //await User1(uid: user!.uid).updateUserData('name','');
       return _userfromFirebase(user!);
     }catch(e){
       print(e.toString());

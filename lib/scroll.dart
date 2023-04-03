@@ -1,10 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+
 import 'ed.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'service/auth.dart';
-
+import 'user.dart';
+import 'package:provider/provider.dart';
 import 'data.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Page1 extends StatefulWidget {
   @override
@@ -64,7 +68,7 @@ class _HomePageState extends State<Page1> {
            ),
            onPressed: () async{
             await _auth.signOut();
-           },)
+           },),
         ],
       ),
       body:

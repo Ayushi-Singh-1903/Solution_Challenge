@@ -8,6 +8,7 @@ import 'package:solution_challenge/ed.dart';
 import 'package:solution_challenge/myths.dart';
 import 'package:solution_challenge/safeab.dart';
 import 'package:solution_challenge/safesex.dart';
+import 'package:solution_challenge/searching/search.dart';
 import 'package:solution_challenge/service/auth.dart';
 import 'package:solution_challenge/sexD.dart';
 import 'package:solution_challenge/wrapper.dart';
@@ -30,13 +31,10 @@ class MyApp extends StatelessWidget {
       catchError: (_,__){},
       initialData: null,
       child: MaterialApp(
-        title: 'Flutter Demo',
+
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: Wrapper(key: null),
+
+        home: Wrapper(),
       ),
     );
   }
