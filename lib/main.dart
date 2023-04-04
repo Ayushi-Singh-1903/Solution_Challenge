@@ -1,23 +1,13 @@
 
+import 'dart:async';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import 'package:solution_challenge/Community/communityData.dart';
-import 'package:solution_challenge/Helpline/h1.dart';
-import 'package:solution_challenge/Helpline/h2.dart';
-import 'package:solution_challenge/ed.dart';
-import 'package:solution_challenge/myths.dart';
-import 'package:solution_challenge/onboarding.dart';
-import 'package:solution_challenge/onboarding1.dart';
-import 'package:solution_challenge/safeab.dart';
-import 'package:solution_challenge/safesex.dart';
-import 'package:solution_challenge/searching/search.dart';
 import 'package:solution_challenge/service/auth.dart';
-import 'package:solution_challenge/sexD.dart';
 import 'package:solution_challenge/wrapper.dart';
 import 'package:flutter/material.dart';
 import 'package:solution_challenge/models/user.dart';
 
-import 'Helpline/h3.dart';
 
 Future <void> main()async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -33,11 +23,43 @@ class MyApp extends StatelessWidget {
       catchError: (_,__){},
       initialData: null,
       child: MaterialApp(
-
+        title: 'Splash Screen',
+        theme: ThemeData(
+          primarySwatch: Colors.green,
+        ),
+        home: MyHomePage(),
         debugShowCheckedModeBanner: false,
+      )
+    );
+  }
+}
 
-        home: Wrapper(),
-      ),
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 5),
+            ()=>Navigator.pushReplacement(context,
+            MaterialPageRoute(builder:
+                (context) =>
+                Wrapper()
+            )
+        )
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        color: Colors.purple[100],
+        child:Padding(
+          padding: const EdgeInsets.all(100.0),
+          child: Container(
+              child: Image.asset("images/logo.png")),
+        )
     );
   }
 }

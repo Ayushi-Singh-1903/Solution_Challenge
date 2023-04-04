@@ -38,7 +38,8 @@ class _HomeState extends State<Search> {
             padding: EdgeInsets.all(17),
             child: Text('Type the activity to know if it can lead to pregnancy! ',style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.bold
+              //fontWeight: FontWeight.bold,
+                color: Colors.white,
             ),),
           ),
           SizedBox(height: 28,),

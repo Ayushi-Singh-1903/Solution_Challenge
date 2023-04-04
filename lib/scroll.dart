@@ -25,7 +25,7 @@ class _HomePageState extends State<Page1> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.purple[100],
-        title:  Image.asset('images/logo2.png',
+        title:  Image.asset('images/logo.png',
             fit:BoxFit.contain,
             height: 50,
             alignment: Alignment.center,
