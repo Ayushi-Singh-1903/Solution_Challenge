@@ -108,7 +108,7 @@ class _anecdotesState extends State<anecdotes>{
                               child: CircleAvatar(
                                 radius: 30,
                                 backgroundColor: Colors.deepPurple,
-                                backgroundImage: AssetImage(documentSnapshot['a2']),
+                                backgroundImage: AssetImage('images/person (2).png'),
                               ),
                               alignment: Alignment.topLeft,
                             ),
@@ -146,7 +146,7 @@ class _anecdotesState extends State<anecdotes>{
                                     circleColor: CircleColor(start: Colors.deepPurpleAccent, end: Colors.deepPurple),
                                     padding: EdgeInsets.only(left: 7,bottom: 7),
                                     size: 34,
-                                    likeCount: documentSnapshot['nol']as int,
+                                    likeCount: 230,
                                     countPostion: CountPostion.bottom,
 
                                   ),
