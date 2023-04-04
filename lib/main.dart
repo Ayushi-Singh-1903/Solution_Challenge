@@ -6,6 +6,8 @@ import 'package:solution_challenge/Helpline/h1.dart';
 import 'package:solution_challenge/Helpline/h2.dart';
 import 'package:solution_challenge/ed.dart';
 import 'package:solution_challenge/myths.dart';
+import 'package:solution_challenge/onboarding.dart';
+import 'package:solution_challenge/onboarding1.dart';
 import 'package:solution_challenge/safeab.dart';
 import 'package:solution_challenge/safesex.dart';
 import 'package:solution_challenge/searching/search.dart';

@@ -10,10 +10,10 @@ class h1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple[100],
-        title:  Image.asset('images/logo2.png',
-          fit:BoxFit.contain,
-          height: 50,
-          alignment: Alignment.center,
+        title:   Text('Helpline', style: TextStyle(
+            color: Colors.white
+
+        ),
         ),
         actions: <Widget>[
 

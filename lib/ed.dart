@@ -13,10 +13,10 @@ class Ed extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.purple[100],
-          title:  Image.asset('images/logo2.png',
-            fit:BoxFit.contain,
-            height: 50,
-            alignment: Alignment.center,
+          title:  Text('Sex Education', style: TextStyle(
+            color: Colors.white
+
+          ),
           ),
           actions: <Widget>[
 
@@ -46,11 +46,7 @@ class Ed extends StatelessWidget {
 
               decoration: BoxDecoration(color: Colors.purple[100],
               borderRadius: BorderRadius.circular(20),
-              boxShadow: [
-              BoxShadow(
-              blurRadius: 25.0,
-              ),
-              ],
+
               ),
               margin: EdgeInsets.only(top: 50),
               ),
@@ -77,7 +73,7 @@ class Ed extends StatelessWidget {
             boxShadow: [
             BoxShadow(
               color: Colors.grey.withOpacity(1),
-            blurRadius: 25.0,
+            blurRadius: 15.0,
             ),
             ],
             borderRadius: BorderRadius.only(

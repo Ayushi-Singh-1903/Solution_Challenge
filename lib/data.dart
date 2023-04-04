@@ -19,7 +19,7 @@ var data = [
     "onTap": Search()
   },
   {
-    "title": "Help",
+    "title": "Helpline",
     "color": 0xFFCE93D8,
     "image": "images/calls1.png",
     "onTap": h1()

@@ -22,10 +22,10 @@ class _HomeState extends State<Search> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.purple[100],
-        title:  Image.asset('images/logo2.png',
-          fit:BoxFit.contain,
-          height: 50,
-          alignment: Alignment.center,
+        title:   Text('Am I Pregnant?', style: TextStyle(
+            color: Colors.white
+
+        ),
         ),
         actions: <Widget>[
 
