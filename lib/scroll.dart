@@ -17,28 +17,7 @@ class Page1 extends StatefulWidget {
 
 class _HomePageState extends State<Page1> {
   var itemList = data;
-  var listScrollController = new ScrollController();
-  var scrollDirection = ScrollDirection.idle;
-
   @override
-  void initState() {
-    listScrollController.addListener(() {
-      setState(() {
-        scrollDirection = listScrollController.position.userScrollDirection;
-      });
-    });
-    super.initState();
-  }
-
-  bool _scrollNotification(ScrollNotification notification) {
-    if (notification is ScrollEndNotification) {
-      setState(() {
-        scrollDirection = ScrollDirection.idle;
-      });
-    }
-    return true;
-  }
-
   final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
@@ -72,73 +51,55 @@ class _HomePageState extends State<Page1> {
         ],
       ),
       body:
-      Container(
-        child: Center(
-          child: GestureDetector(
-            child: Container(
-              height: 300,
-              padding: EdgeInsets.symmetric(vertical: 16),
-              child: NotificationListener<ScrollNotification>(
-                onNotification: _scrollNotification,
-                child: ListView(
-                  controller: listScrollController,
-                  scrollDirection: Axis.horizontal,
-                  children: data.map((item) {
-                    return GestureDetector(
-                      onTap: () {
-                        var it=data.map((e) => null);
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => item["onTap"] as Widget ));
-                      },
-                      child: AnimatedContainer(
-                        duration: Duration(milliseconds: 100),
-                        transform: Matrix4.rotationZ(
-                            scrollDirection == ScrollDirection.forward
-                                ? 0.07
-                                : scrollDirection == ScrollDirection.reverse
-                                ? -0.07
-                                : 0),
-                        width: 200,
-                        margin: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                        decoration: BoxDecoration(
-                            color: Color(item["color"] as int),
-                            borderRadius: BorderRadius.circular(16),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color(item["color"] as int).withOpacity(0.6),
-                                  offset: Offset(-6, 4),
-                                  blurRadius: 10)
-                            ]),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Image.asset(
-                              item["image"] as String,
-                              height: 120,
-                            ),
-                            Padding(padding: EdgeInsets.symmetric(vertical: 16)),
-                            Text(
-                              item["title"] as String,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                              fontWeight: FontWeight.bold)
-                            )
-                          ],
+                Padding(
+                  padding: const EdgeInsets.only(top:35,bottom: 20,left: 12,right: 12),
+                  child: GridView.count(
+                    crossAxisSpacing: 0,
+                    childAspectRatio: (1 / 1.8),
+                    crossAxisCount: 2,
+                    children: data.map((item) {
+                      return GestureDetector(
+                        onTap: () {
+                          var it=data.map((e) => null);
+                          Navigator.push(
+                              context, MaterialPageRoute(builder: (context) => item["onTap"] as Widget ));
+                        },
+                        child: Container(
+                          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
+                          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                          decoration: BoxDecoration(
+                              color: Color(item["color"] as int),
+                              borderRadius: BorderRadius.circular(16),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color(item["color"] as int).withOpacity(0.6),
+                                    offset: Offset(-6, 4),
+                                    blurRadius: 10)
+                              ]),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                item["image"] as String,
+                                height: 120,
+                              ),
+                              Padding(padding: EdgeInsets.symmetric(vertical: 16)),
+                              Text(
+                                item["title"] as String,
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                fontWeight: FontWeight.bold)
+                              )
+                            ],
+                          ),
+
                         ),
-
-                      ),
-                    );
-                  }).toList(),
+                      );
+                    }).toList(),
+                  ),
                 ),
-              ),
-            ),
-
-          ),
-        ),
-      ),
     );
   }
 }

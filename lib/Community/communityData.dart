@@ -77,10 +77,10 @@ class _anecdotesState extends State<anecdotes>{
         backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: Colors.purple[100],
-          title:  Image.asset('images/logo2.png',
-            fit:BoxFit.contain,
-            height: 50,
-            alignment: Alignment.center,
+          title:   Text('Community Platform', style: TextStyle(
+              color: Colors.white
+
+          ),
           ),
           actions: <Widget>[
 
